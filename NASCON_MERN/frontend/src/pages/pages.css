@@ -1,6 +1,7 @@
 /* Home.css */
 
-.home {
+  .home {
+    margin-top: 50px;
     padding: 20px;
   }
   
@@ -8,24 +9,48 @@
     border: 1px solid #ccc;
     padding: 20px;
     margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  .summary-container {
+    display: flex; /* Use flexbox layout for the summary */
+    justify-content: center; /* Center the summary horizontally */
   }
   
-  .contact-section {
-    border: 1px solid #ccc;
-    padding: 20px;
-  }
-  
-  .social-media-links {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .social-media-links a {
-    text-decoration: none;
-    color: #333;
-  }
-  
-  .social-media-links a:hover {
-    color: blue;
-  }
+  .summary-box,
+.contact-links {
+  width: 50%; /* Set the width of each box to 50% */
+  padding: 20px; /* Add padding to each box */
+}
+
+.summary-box {
+  background-color: #f0f0f0; /* Set background color for the summary box */
+}
+
+.contact-links {
+  background-color: #e0e0e0; /* Set background color for the contact links box */
+}
+
+.contact-links h2,
+.summary-box h2 {
+  margin-bottom: 10px; /* Add some space below the heading */
+}
+
+.contact-links ul {
+  list-style-type: none; /* Remove bullet points from the list */
+  padding: 0; /* Remove default padding */
+}
+
+.contact-links ul li {
+  margin-bottom: 5px; /* Add some space between list items */
+}
+
+.contact-links ul li a {
+  color: #333; /* Set link color */
+  text-decoration: none; /* Remove underline from links */
+}
+
+.contact-links ul li a:hover {
+  text-decoration: underline; /* Underline links on hover */
+}
   

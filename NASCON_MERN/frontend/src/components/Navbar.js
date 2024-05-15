@@ -6,7 +6,9 @@ const Navbar = () => {
   return (
     <header className="navbar">
       <div className="container">
-        <h1>NASCON Management System</h1>
+        <Link to="/">
+          <h1>NASCON Management System</h1>
+        </Link>
         <div className="nav-buttons">
           <Link to="/Admin">
             <button className="nav-button">Admin</button>
