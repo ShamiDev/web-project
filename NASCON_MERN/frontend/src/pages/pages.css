@@ -1,0 +1,31 @@
+/* Home.css */
+
+.home {
+    padding: 20px;
+  }
+  
+  .summary-section {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .contact-section {
+    border: 1px solid #ccc;
+    padding: 20px;
+  }
+  
+  .social-media-links {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .social-media-links a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .social-media-links a:hover {
+    color: blue;
+  }
+  

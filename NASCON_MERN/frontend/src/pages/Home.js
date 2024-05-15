@@ -1,40 +1,26 @@
-import React, { useEffect } from "react";
-import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
+import React from "react";
 import Navbar from "../components/Navbar"; // Import the Navbar component
-// import WorkoutDetails from "../components/WorkoutDetails";
-// import WorkoutForm from "../components/WorkoutForm";
-// import { Link } from "react-router-dom";
+import "./pages.css"; // Import the CSS file for styling
 
 const Home = () => {
-  const { workouts, dispatch } = useWorkoutsContext();
-
-  useEffect(() => {
-    const fetchWorkouts = async () => {
-      const response = await fetch("/api/workouts");
-      const json = await response.json();
-
-      if (response.ok) {
-        dispatch({ type: "SET_WORKOUTS", payload: json });
-      }
-    };
-
-    fetchWorkouts();
-  }, [dispatch]);
-
   return (
     <div className="home">
       <Navbar /> {/* Use the Navbar component */}
-      {/* <div className="workouts">
-        {workouts &&
-          workouts.map((workout) => (
-            <WorkoutDetails workout={workout} key={workout._id} />
-          ))}
-      </div>
-      <WorkoutForm /> */}
 
-      {/* <Link to="/Admin">
-        <button>Go to Admin</button>
-      </Link> */}
+      <div className="summary-section">
+        <h2>Summary</h2>
+        <p>Our website aims to provide NASCON admin and faculty with an easier time managing the event.</p>
+      </div>
+
+      <div className="contact-section">
+        <h2>Contact Us</h2>
+        <p>For further information, connect with us on social media:</p>
+        <div className="social-media-links">
+          <a href="https://linkedin.com">LinkedIn</a>
+          <a href="https://twitter.com">Twitter</a>
+          <a href="https://facebook.com">Facebook</a>
+        </div>
+      </div>
     </div>
   );
 };
