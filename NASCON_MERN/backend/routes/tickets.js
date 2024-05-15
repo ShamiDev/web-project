@@ -13,15 +13,15 @@ const router = express.Router();
 router.get('/', getTickets);
 
 // GET a single ticket
-router.get('/:id', getTicket);
+router.get('/:username', getTicket);
 
 // POST a new ticket
 router.post('/', createTicket);
 
 // DELETE a ticket
-router.delete('/:id', deleteTicket);
+router.delete('/:username', deleteTicket);
 
 // UPDATE a ticket
-router.patch('/:id', updateTicket);
+router.patch('/:username', updateTicket);
 
 module.exports = router;

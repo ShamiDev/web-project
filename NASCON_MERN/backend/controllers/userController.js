@@ -10,13 +10,13 @@ const getUsers = async (req, res) => {
 
 // get a single user
 const getUser = async (req, res) => {
-  const { id } = req.params;
+  const { username } = req.params;
 
-  if (!mongoose.Types.ObjectId.isValid(id)) {
+  if (!mongoose.Types.ObjectId.isValid(username)) {
     return res.status(404).json({ error: 'No such user' });
   }
 
-  const user = await User.findById(id);
+  const user = await User.findById(username);
 
   if (!user) {
     return res.status(404).json({ error: 'No such user' });
@@ -64,13 +64,13 @@ const createUser = async (req, res) => {
 
 // delete a user
 const deleteUser = async (req, res) => {
-  const { id } = req.params;
+  const { username } = req.params;
 
-  if (!mongoose.Types.ObjectId.isValid(id)) {
+  if (!mongoose.Types.ObjectId.isValid(username)) {
     return res.status(400).json({ error: 'No such user' });
   }
 
-  const user = await User.findOneAndDelete({ _id: id });
+  const user = await User.findOneAndDelete({ username });
 
   if (!user) {
     return res.status(400).json({ error: 'No such user' });
@@ -81,13 +81,13 @@ const deleteUser = async (req, res) => {
 
 // update a user
 const updateUser = async (req, res) => {
-  const { id } = req.params;
+  const { username } = req.params;
 
-  if (!mongoose.Types.ObjectId.isValid(id)) {
+  if (!mongoose.Types.ObjectId.isValid(username)) {
     return res.status(400).json({ error: 'No such user' });
   }
 
-  const user = await User.findOneAndUpdate({ _id: id }, { ...req.body });
+  const user = await User.findOneAndUpdate({ username }, { ...req.body });
 
   if (!user) {
     return res.status(400).json({ error: 'No such user' });

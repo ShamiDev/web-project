@@ -13,14 +13,14 @@ const getParticipants = async (req, res) => {
 
 // get a single participant
 const getParticipant = async (req, res) => {
-  const { id } = req.params;
+  const { username } = req.params;
 
-  if (!mongoose.Types.ObjectId.isValid(id)) {
+  if (!mongoose.Types.ObjectId.isValid(username)) {
     return res.status(404).json({ error: 'No such participant' });
   }
 
   try {
-    const participant = await Participant.findById(id);
+    const participant = await Participant.findById(username);
     if (!participant) {
       return res.status(404).json({ error: 'No such participant' });
     }
@@ -46,12 +46,12 @@ const createParticipant = async (req, res) => {
 const deleteParticipant = async (req, res) => {
   const { id } = req.params;
 
-  if (!mongoose.Types.ObjectId.isValid(id)) {
+  if (!mongoose.Types.ObjectId.isValid(username)) {
     return res.status(400).json({ error: 'No such participant' });
   }
 
   try {
-    const participant = await Participant.findOneAndDelete({ _id: id });
+    const participant = await Participant.findOneAndDelete({ username });
     if (!participant) {
       return res.status(400).json({ error: 'No such participant' });
     }
@@ -63,14 +63,14 @@ const deleteParticipant = async (req, res) => {
 
 // update a participant
 const updateParticipant = async (req, res) => {
-  const { id } = req.params;
+  const { username } = req.params;
 
-  if (!mongoose.Types.ObjectId.isValid(id)) {
+  if (!mongoose.Types.ObjectId.isValid(username)) {
     return res.status(400).json({ error: 'No such participant' });
   }
 
   try {
-    const participant = await Participant.findOneAndUpdate({ _id: id }, { ...req.body }, { new: true });
+    const participant = await Participant.findOneAndUpdate({ username }, { ...req.body }, { new: true });
     if (!participant) {
       return res.status(400).json({ error: 'No such participant' });
     }

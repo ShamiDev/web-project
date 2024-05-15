@@ -13,15 +13,15 @@ const router = express.Router();
 router.get('/', getParticipants);
 
 // GET a single participant
-router.get('/:id', getParticipant);
+router.get('/:username', getParticipant);
 
 // POST a new participant
 router.post('/', createParticipant);
 
 // DELETE a participant
-router.delete('/:id', deleteParticipant);
+router.delete('/:username', deleteParticipant);
 
 // UPDATE a participant
-router.patch('/:id', updateParticipant);
+router.patch('/:username', updateParticipant);
 
 module.exports = router;

@@ -12,15 +12,15 @@ const {
 router.get('/', getEvents);
 
 // GET a single event
-router.get('/:id', getEvent);
+router.get('/:eventName', getEvent);
 
 // POST a new event
 router.post('/', createEvent);
 
 // DELETE an event
-router.delete('/:id', deleteEvent);
+router.delete('/:eventName', deleteEvent);
 
 // UPDATE an event
-router.patch('/:id', updateEvent);
+router.patch('/:eventName', updateEvent);
 
 module.exports = router;

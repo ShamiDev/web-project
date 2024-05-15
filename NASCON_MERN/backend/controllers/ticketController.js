@@ -13,14 +13,14 @@ const getTickets = async (req, res) => {
 
 // get a single ticket
 const getTicket = async (req, res) => {
-  const { id } = req.params;
+  const { username } = req.params;
 
-  if (!mongoose.Types.ObjectId.isValid(id)) {
+  if (!mongoose.Types.ObjectId.isValid(username)) {
     return res.status(404).json({ error: 'No such ticket' });
   }
 
   try {
-    const ticket = await Ticket.findById(id);
+    const ticket = await Ticket.findById(username);
     if (!ticket) {
       return res.status(404).json({ error: 'No such ticket' });
     }
@@ -46,12 +46,12 @@ const createTicket = async (req, res) => {
 const deleteTicket = async (req, res) => {
   const { id } = req.params;
 
-  if (!mongoose.Types.ObjectId.isValid(id)) {
+  if (!mongoose.Types.ObjectId.isValid(username)) {
     return res.status(400).json({ error: 'No such ticket' });
   }
 
   try {
-    const ticket = await Ticket.findOneAndDelete({ _id: id });
+    const ticket = await Ticket.findOneAndDelete({ username });
     if (!ticket) {
       return res.status(400).json({ error: 'No such ticket' });
     }

@@ -13,15 +13,15 @@ const router = express.Router();
 router.get('/', getUsers);
 
 // GET a single user
-router.get('/:id', getUser);
+router.get('/:username', getUser);
 
 // POST a new user
 router.post('/', createUser);
 
 // DELETE a user
-router.delete('/:id', deleteUser);
+router.delete('/:username', deleteUser);
 
 // UPDATE a user
-router.patch('/:id', updateUser);
+router.patch('/:username', updateUser);
 
 module.exports = router;

@@ -13,14 +13,14 @@ const getEvents = async (req, res) => {
 
 // get a single event
 const getEvent = async (req, res) => {
-  const { id } = req.params;
+  const { eventName } = req.params;
 
-  if (!mongoose.Types.ObjectId.isValid(id)) {
+  if (!mongoose.Types.ObjectId.isValid(eventName)) {
     return res.status(404).json({ error: 'No such event' });
   }
 
   try {
-    const event = await Event.findById(id);
+    const event = await Event.findById(eventName);
     if (!event) {
       return res.status(404).json({ error: 'No such event' });
     }
@@ -44,14 +44,10 @@ const createEvent = async (req, res) => {
 
 // delete an event
 const deleteEvent = async (req, res) => {
-  const { id } = req.params;
-
-  if (!mongoose.Types.ObjectId.isValid(id)) {
-    return res.status(400).json({ error: 'No such event' });
-  }
+  const { eventName } = req.params;
 
   try {
-    const event = await Event.findOneAndDelete({ _id: id });
+    const event = await Event.findOneAndDelete({ eventName });
     if (!event) {
       return res.status(400).json({ error: 'No such event' });
     }
@@ -60,6 +56,7 @@ const deleteEvent = async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 };
+
 
 // update an event
 const updateEvent = async (req, res) => {
@@ -70,7 +67,7 @@ const updateEvent = async (req, res) => {
   }
 
   try {
-    const event = await Event.findOneAndUpdate({ _id: id }, { ...req.body }, { new: true });
+    const event = await Event.findOneAndUpdate({ eventName }, { ...req.body }, { new: true });
     if (!event) {
       return res.status(400).json({ error: 'No such event' });
     }
