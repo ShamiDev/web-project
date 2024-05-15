@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 const FacultyForm = ({ updateFacultyList }) => {
     // Define state variables to store form data
@@ -45,8 +43,6 @@ const FacultyForm = ({ updateFacultyList }) => {
             // Optionally, you can handle success here (e.g., show a success message)
         } catch (error) {
             console.error("Error:", error);
-            // Show error toast
-            showErrorToast(error.message);
         }
     };
 
@@ -59,12 +55,6 @@ const FacultyForm = ({ updateFacultyList }) => {
     };
 
     // Function to show error toast
-    const showErrorToast = (errorMessage) => {
-        toast.error(errorMessage, {
-            position: toast.POSITION.TOP_CENTER
-        });
-    };
-
     return (
         <form className="create" onSubmit={handleSubmit}>
             <h3>Add a New Faculty Member</h3>

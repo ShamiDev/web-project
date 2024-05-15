@@ -58,24 +58,22 @@ const deleteEvent = async (req, res) => {
 };
 
 
-// update an event
 const updateEvent = async (req, res) => {
-  const { id } = req.params;
-
-  if (!mongoose.Types.ObjectId.isValid(id)) {
-    return res.status(400).json({ error: 'No such event' });
-  }
+  const { eventName } = req.params;
 
   try {
-    const event = await Event.findOneAndUpdate({ eventName }, { ...req.body }, { new: true });
+    const event = await Event.findOneAndUpdate({ eventName: eventName }, { ...req.body }, { new: true });
     if (!event) {
-      return res.status(400).json({ error: 'No such event' });
+      return res.status(404).json({ error: 'Event not found' });
     }
     res.status(200).json(event);
   } catch (error) {
+    console.error("Error updating event:", error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
 };
+
+
 
 module.exports = {
   getEvents,
