@@ -3,7 +3,8 @@ require('dotenv').config()
 const express = require('express')
 const mongoose = require('mongoose')
 const workoutRoutes = require('./routes/workouts')
-
+const usersRoutes = require('./routes/users')
+const eventsRoutes = require('./routes/events')
 // express app
 const app = express()
 
@@ -17,6 +18,8 @@ app.use((req, res, next) => {
 
 // routes
 app.use('/api/workouts', workoutRoutes)
+app.use('/api/users', usersRoutes)
+app.use('/api/events', eventsRoutes)
 
 // connect to db
 // connect to local db
