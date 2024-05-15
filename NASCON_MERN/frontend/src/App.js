@@ -1,21 +1,19 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Admin from "./pages/Admin"; // Import Admin component
 
-// pages & components
-import Home from './pages/Home'
-import Navbar from './components/Navbar'
+
 
 function App() {
-
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar />
         <div className="pages">
           <Routes>
-            <Route 
-              path="/" 
-              element={<Home />} 
-            />
+            <Route path="/" element={<Home />} />
+            {/* Add Route for Admin component */}
+            <Route path="/Admin" element={<Admin />} />
           </Routes>
         </div>
       </BrowserRouter>
@@ -24,4 +22,3 @@ function App() {
 }
 
 export default App;
-

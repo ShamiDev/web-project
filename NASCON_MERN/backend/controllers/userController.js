@@ -28,7 +28,7 @@ const getUser = async (req, res) => {
 // create a new user
 const createUser = async (req, res) => {
   const { username, fullname, password, email, phone, userRole } = req.body;
-
+  console.log("Hello");
   let emptyFields = [];
 
   if (!username) {
@@ -66,18 +66,26 @@ const createUser = async (req, res) => {
 const deleteUser = async (req, res) => {
   const { username } = req.params;
 
-  if (!mongoose.Types.ObjectId.isValid(username)) {
-    return res.status(400).json({ error: 'No such user' });
-  }
+  // Check if the username exists in the database
+  const user = await User.findOne({ username });
 
-  const user = await User.findOneAndDelete({ username });
-
+  // If the user does not exist, return an error
   if (!user) {
     return res.status(400).json({ error: 'No such user' });
   }
 
-  res.status(200).json(user);
+  // If the user exists, delete it
+  try {
+    await User.findOneAndDelete({ username });
+    res.status(200).json({ message: 'User deleted successfully' });
+  } catch (error) {
+    // If there's an error while deleting the user, return an error response
+    console.error('Error deleting user:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
 };
+
+
 
 // update a user
 const updateUser = async (req, res) => {

@@ -7,6 +7,7 @@ const WorkoutDetails = ({ workout }) => {
   const { dispatch } = useWorkoutsContext()
 
   const handleClick = async () => {
+    console.log('/api/workouts/' + workout._id);
     const response = await fetch('/api/workouts/' + workout._id, {
       method: 'DELETE'
     })
