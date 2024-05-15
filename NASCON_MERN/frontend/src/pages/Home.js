@@ -1,9 +1,11 @@
 import { useEffect } from "react"
 import { useWorkoutsContext } from "../hooks/useWorkoutsContext"
 
-// components
+// pages and components
 import WorkoutDetails from "../components/WorkoutDetails"
 import WorkoutForm from "../components/WorkoutForm"
+
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const { workouts, dispatch } = useWorkoutsContext()
@@ -29,6 +31,11 @@ const Home = () => {
         ))}
       </div>
       <WorkoutForm />
+
+      {/* Button to navigate to Admin component */}
+      <Link to="/Admin">
+        <button>Go to Admin</button>
+      </Link>
     </div>
   )
 }

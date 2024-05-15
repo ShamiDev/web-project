@@ -14,7 +14,7 @@ const WorkoutForm = () => {
     e.preventDefault()
 
     const workout = {title, load, reps}
-    
+    console.log("111");
     const response = await fetch('/api/workouts', {
       method: 'POST',
       body: JSON.stringify(workout),
@@ -22,8 +22,11 @@ const WorkoutForm = () => {
         'Content-Type': 'application/json'
       }
     })
+    
+    console.log("222");
     const json = await response.json()
 
+    console.log("333");
     if (!response.ok) {
       setError(json.error)
       setEmptyFields(json.emptyFields)

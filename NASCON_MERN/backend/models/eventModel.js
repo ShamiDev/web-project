@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+// Import the userSchema from userModel.js
+const User = require('./userModel');
+
 const eventSchema = new Schema({
   eventName: {
     type: String,
@@ -27,13 +30,15 @@ const eventSchema = new Schema({
 }, { timestamps: true });
 
 // Middleware to remove associated events when a user is removed
-userSchema.pre('remove', async function(next) {
+eventSchema.pre('remove', async function(next) {
   try {
+    // Use the User model to delete events associated with the user
     await Event.deleteMany({ facultyMentorUsername: this.username });
     next();
   } catch (error) {
     next(error);
   }
 });
+
 
 module.exports = mongoose.model('Event', eventSchema);
