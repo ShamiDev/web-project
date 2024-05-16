@@ -14,6 +14,21 @@ body {
 header {
   background: #fff;
 }
+/* Default styles for larger screens */
+.header {
+  width: 100%;
+  padding: 20px;
+  background-color: #333;
+  color: #fff;
+}
+
+/* Media query for screens smaller than 768px */
+@media (max-width: 768px) {
+  .header {
+    padding: 10px;
+  }
+}
+
 header .container {
   max-width: 1400px;
   margin: 0 auto;
@@ -23,7 +38,7 @@ header .container {
   justify-content: space-between;
 }
 header a {
-  color: #ededed;
+  color: #c3c1c1;
   text-decoration: none;
 }
 .pages{
