@@ -20,10 +20,6 @@ const Navbar = () => {
             <button className="nav-button">Participant</button>
           </Link>
         </div>
-        <br></br>
-        <div>
-          Hello
-        </div>
       </div>
     </header>
   );
