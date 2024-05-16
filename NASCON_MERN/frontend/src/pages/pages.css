@@ -1,21 +1,21 @@
 /* Home.css */
 
-  .home {
-    margin-top: 50px;
-    padding: 20px;
-  }
-  
-  .summary-section {
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-  }
+.home {
+  margin-top: 50px;
+  padding: 20px;
+}
 
-  .summary-container {
-    display: flex; /* Use flexbox layout for the summary */
-    justify-content: center; /* Center the summary horizontally */
-  }
+.summary-section {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.summary-container {
+  display: flex; /* Use flexbox layout for the summary */
+  justify-content: center; /* Center the summary horizontally */
+}
   
   .summary-box,
 .contact-links {

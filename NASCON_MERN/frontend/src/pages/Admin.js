@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import FacultyForm from "../components/FacultyForm";
+import Navbar from "../components/Navbar";
 
 
 const Admin = () => {
@@ -55,6 +56,7 @@ const Admin = () => {
 
   return (
     <div className="admin">
+      <Navbar/>
       <h1>Hello, Admin!</h1>
       <div className="workouts">
         <h2>Faculty Details:</h2>
