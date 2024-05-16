@@ -22,10 +22,36 @@ header {
   color: #fff;
 }
 
-/* Media query for screens smaller than 768px */
-@media (max-width: 768px) {
+/* Media Queries */
+
+/* Small screens (up to 768px) */
+@media (max-width: 767px) {
   .header {
     padding: 10px;
+  }
+
+  header .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pages {
+    padding: 10px;
+  }
+
+  input {
+    width: 100%;
+  }
+}
+
+/* Medium screens (768px to 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  header .container {
+    padding: 10px;
+  }
+
+  .pages {
+    padding: 15px;
   }
 }
 

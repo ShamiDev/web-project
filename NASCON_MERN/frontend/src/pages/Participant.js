@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./eventdetail.css"; 
+import Navbar from "../components/Navbar";
 
 const EventListParticipant = () => {
   // State variable to store the list of events
@@ -62,6 +63,8 @@ const EventListParticipant = () => {
 const Participant = () => {
   return (
     <div className="Participant">
+      <Navbar />
+      <br></br>
       <h1>Hello, Participant</h1>
       <EventListParticipant />
     </div>

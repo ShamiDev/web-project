@@ -21,7 +21,8 @@ const Home = () => {
 
   return (
     <div className="home">
-      <Navbar /> {/* Use the Navbar component */}
+      <Navbar />
+      <br></br>
       <div className="summary-container">
         <div className="summary-box">
           <h2>Summary</h2>
