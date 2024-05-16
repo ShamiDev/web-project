@@ -14,26 +14,6 @@ const ticketSchema = new Schema({
   }
 });
 
-// Middleware to remove associated tickets when an event is removed
-eventSchema.pre('remove', async function(next) {
-  try {
-    await Ticket.deleteMany({ event: this._id });
-    next();
-  } catch (error) {
-    next(error);
-  }
-});
-
-// Middleware to remove associated tickets when a participant is removed
-participantSchema.pre('remove', async function(next) {
-  try {
-    await Ticket.deleteMany({ participant: this._id });
-    next();
-  } catch (error) {
-    next(error);
-  }
-});
-
 const Ticket = mongoose.model('Ticket', ticketSchema);
 
 module.exports = Ticket;

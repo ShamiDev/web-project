@@ -12,15 +12,28 @@ const getTickets = async (req, res) => {
 };
 
 // get a single ticket
-const getTicket = async (req, res) => {
+// get all tickets of a specific username
+const getTicketsByUsername = async (req, res) => {
   const { username } = req.params;
 
-  if (!mongoose.Types.ObjectId.isValid(username)) {
-    return res.status(404).json({ error: 'No such ticket' });
+  try {
+    const tickets = await Ticket.find({ userName: username });
+    if (!tickets || tickets.length === 0) {
+      return res.status(404).json({ error: 'No tickets found for this username' });
+    }
+    res.status(200).json(tickets);
+  } catch (error) {
+    res.status(500).json({ error: 'Internal Server Error' });
   }
+};
+
+
+// get a single ticket by username and event name
+const getTicketByUsernameAndEventName = async (req, res) => {
+  const { username, eventName } = req.params;
 
   try {
-    const ticket = await Ticket.findById(username);
+    const ticket = await Ticket.findOne({ userName: username, eventName: eventName });
     if (!ticket) {
       return res.status(404).json({ error: 'No such ticket' });
     }
@@ -30,10 +43,11 @@ const getTicket = async (req, res) => {
   }
 };
 
+
 // create a new ticket
 const createTicket = async (req, res) => {
   const { userName, eventName } = req.body;
-
+  console.log(userName,eventName);
   try {
     const ticket = await Ticket.create({ userName, eventName });
     res.status(200).json(ticket);
@@ -82,8 +96,9 @@ const updateTicket = async (req, res) => {
 
 module.exports = {
   getTickets,
-  getTicket,
+  getTicketsByUsername,
   createTicket,
   deleteTicket,
-  updateTicket
+  updateTicket,
+  getTicketByUsernameAndEventName
 };

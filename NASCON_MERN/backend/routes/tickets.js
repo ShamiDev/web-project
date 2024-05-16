@@ -1,10 +1,11 @@
 const express = require('express');
 const {
   getTickets,
-  getTicket,
+  getTicketsByUsername,
   createTicket,
   deleteTicket,
-  updateTicket
+  getTicketByUsernameAndEventName,
+  updateTicket // Ensure this function is imported
 } = require('../controllers/ticketController');
 
 const router = express.Router();
@@ -12,8 +13,11 @@ const router = express.Router();
 // GET all tickets
 router.get('/', getTickets);
 
-// GET a single ticket
-router.get('/:username', getTicket);
+// GET a single ticket by username
+router.get('/:username', getTicketsByUsername);
+
+// GET a single ticket by username and event name
+router.get('/:username/:eventName', getTicketByUsernameAndEventName); // Use getTicketByUsernameAndEventName here
 
 // POST a new ticket
 router.post('/', createTicket);

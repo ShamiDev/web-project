@@ -36,6 +36,7 @@ const createParticipant = async (req, res) => {
 
   try {
     const participant = await Participant.create({ username, cnic, FoodDeal });
+    console.log(participant);
     res.status(200).json(participant);
   } catch (error) {
     res.status(400).json({ error: error.message });
