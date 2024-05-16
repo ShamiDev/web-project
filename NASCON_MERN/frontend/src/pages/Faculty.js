@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import EventForm from "../components/EventForm";
 import EventList from "../components/EventList";
+import Navbar from "../components/Navbar";
 
 const Faculty = () => {
   const [events, setEvents] = useState([]);
@@ -77,6 +78,7 @@ const Faculty = () => {
 
   return (
     <div className="Faculty">
+      <Navbar />
       <h1>Hello, Faculty!</h1>
       <EventList events={events} handleDelete={handleDeleteEvent} handleUpdate={handleUpdateEvent} />
       <EventForm updateEventList={updateEventList} />

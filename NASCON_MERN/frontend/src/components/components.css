@@ -1,43 +1,42 @@
 /* Navbar.css */
 
-  .navbar {
-    background-color: #333; /* Set the background color of the navbar */
-    color: white; /* Set the text color of the navbar */
-    padding: 1rem; /* Add padding to the navbar */
-    text-align: center; /* Center align the text within the navbar */
-    width: 100%; /* Make the navbar full width */
-  }
-  
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  h1 {
-    margin: 0;
-  }
-  
-  .nav-buttons {
-    display: flex;
-    align-items: center;
-    float: right;
-  }
-  
-  .nav-button {
-    background-color: #555;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    margin-left: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .nav-button:hover {
-    background-color: #777;
-  }
-  
+.navbar {
+  background-color: #333; /* Set the background color of the navbar */
+  color: white; /* Set the text color of the navbar */
+  padding: 1rem; /* Add padding to the navbar */
+  text-align: center; /* Center align the text within the navbar */
+  width: 100%; /* Make the navbar full width */
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h1 {
+  margin: 0;
+}
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  float: right;
+}
+
+.nav-button {
+  background-color: #555;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-left: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.nav-button:hover {
+  background-color: #777;
+}
