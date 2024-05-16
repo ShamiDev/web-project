@@ -64,7 +64,7 @@ const Participant = () => {
   return (
     <div className="Participant">
       <Navbar />
-      <br></br>
+      <br/>
       <h1>Hello, Participant</h1>
       <EventListParticipant />
     </div>

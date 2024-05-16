@@ -57,7 +57,7 @@ const Admin = () => {
   return (
     <div className="admin">
       <Navbar/>
-      <br></br>
+      <br/>
       <h1>Hello, Admin!</h1>
       <div className="workouts">
         <h2>Faculty Details:</h2>

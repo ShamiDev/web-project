@@ -22,7 +22,7 @@ const Home = () => {
   return (
     <div className="home">
       <Navbar />
-      <br></br>
+      <br/>
       <div className="summary-container">
         <div className="summary-box">
           <h2>Summary</h2>

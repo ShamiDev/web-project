@@ -79,8 +79,7 @@ const Faculty = () => {
   return (
     <div className="Faculty">
       <Navbar />
-      <br></br>
-
+      <br/>
       <h1>Hello, Faculty!</h1>
       <EventList events={events} handleDelete={handleDeleteEvent} handleUpdate={handleUpdateEvent} />
       <EventForm updateEventList={updateEventList} />
