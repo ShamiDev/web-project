@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import "./components.css";
+
 
 const EventList = ({ events, handleDelete, handleUpdate }) => {
   const [selectedEvent, setSelectedEvent] = useState(null);
