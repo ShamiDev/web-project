@@ -1,0 +1,28 @@
+
+.event-list {
+    margin-top: 20px;
+  }
+  
+  .event-details {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .event-details h4 {
+    margin-top: 0;
+  }
+  
+  .event-details button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .event-details button:hover {
+    background-color: #0056b3;
+  }
+  
