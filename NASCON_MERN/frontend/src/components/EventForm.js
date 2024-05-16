@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./components.css"; // Import the CSS file
 
 const EventForm = ({ updateEventList }) => {
   // Define state variables to store form data
@@ -103,7 +104,12 @@ const EventForm = ({ updateEventList }) => {
         placeholder="Event Time"
         required
       />
-      <select name="facultyMentorUsername" value={formData.facultyMentorUsername} onChange={handleChange} required>
+      <select
+        name="facultyMentorUsername"
+        value={formData.facultyMentorUsername}
+        onChange={handleChange}
+        required
+      >
         <option value="">Select Faculty</option>
         {users.map((user) => (
           <option key={user.username} value={user.username}>

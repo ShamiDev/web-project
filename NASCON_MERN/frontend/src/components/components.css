@@ -1,3 +1,18 @@
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-buttons {
+    float: none;
+    margin-top: 10px;
+  }
+}
+
+/* Navbar New */
 /* Navbar.css */
 
 .navbar {
@@ -6,6 +21,9 @@
   padding: 1rem; /* Add padding to the navbar */
   text-align: center; /* Center align the text within the navbar */
   width: 100%; /* Make the navbar full width */
+  position: fixed; /* Fix the navbar position */
+  top: 0; /* Stick the navbar to the top of the page */
+  z-index: 1000; /* Set a high z-index to ensure the navbar is above other content */
 }
 
 .container {
@@ -25,6 +43,7 @@ h1 {
   display: flex;
   align-items: center;
   float: right;
+  
 }
 
 .nav-button {
@@ -38,5 +57,149 @@ h1 {
 }
 
 .nav-button:hover {
-  background-color: #777;
+  background-color: #86926f;
 }
+
+.nav-button:hover {
+  background-color: #86926f;
+}
+
+/* EventList.js */
+
+.event-list {
+  margin-top: 20px;
+}
+
+.event-list h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.workout-details {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.workout-details h4 {
+  margin-bottom: 5px;
+}
+
+.workout-details p {
+  margin: 5px 0;
+}
+
+.workout-details button {
+  margin-right: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+  border: none;
+  background-color: #007bff;
+  color: white;
+}
+
+.workout-details button:hover {
+  background-color: #0056b3;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.popup h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.popup button {
+  margin-right: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background-color: white;
+}
+
+.popup button:hover {
+  background-color: #f0f0f0;
+}
+
+/* FacultyForm.js */
+
+.create {
+  margin-top: 20px;
+}
+
+.create h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.create input {
+  margin-bottom: 10px;
+  padding: 8px;
+  width: 100%;
+}
+
+.create button {
+  margin: 5px;
+  padding: 8px 16px;
+  cursor: pointer;
+  border: none;
+  background-color: #007bff;
+  color: white;
+}
+
+.create button:hover {
+  background-color: #0056b3;
+}
+
+.success-message {
+  color: green;
+  margin-bottom: 10px;
+}
+
+.create {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.create h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.create input,
+.create select{
+  margin-bottom: 10px;
+  padding: 8px;
+  width: 100%;
+}
+
+.create button {
+  margin-bottom: 10px;
+  padding: 8px;
+  width: 10%;
+  cursor: pointer;
+  border: none;
+  background-color: #007bff;
+  color: white;
+}
+
+.create button:hover {
+  background-color: #0056b3;
+}
+
+.create select {
+  width: 100%;
+}
+
+

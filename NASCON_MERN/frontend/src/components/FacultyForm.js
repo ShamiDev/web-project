@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+//import "./components.css"; // Import the CSS file
 
 const FacultyForm = ({ updateFacultyList }) => {
-    // Define state variables to store form data
+    // Define state variables to store form data and success message
     const [formData, setFormData] = useState({
         username: "",
         fullname: "",
@@ -10,6 +11,7 @@ const FacultyForm = ({ updateFacultyList }) => {
         phone: "",
         userRole: 2 // Assuming userRole is a number
     });
+    const [successMessage, setSuccessMessage] = useState("");
 
     // Handle form submission
     const handleSubmit = async (e) => {
@@ -27,6 +29,7 @@ const FacultyForm = ({ updateFacultyList }) => {
             if (!response.ok) {
                 throw new Error("Failed to create user");
             }
+
             // Reset form after successful submission
             setFormData({
                 username: "",
@@ -40,7 +43,9 @@ const FacultyForm = ({ updateFacultyList }) => {
             // Update the list of faculty members
             updateFacultyList();
 
-            // Optionally, you can handle success here (e.g., show a success message)
+            // Set success message
+            setSuccessMessage("Faculty member added successfully!");
+
         } catch (error) {
             console.error("Error:", error);
         }
@@ -54,10 +59,10 @@ const FacultyForm = ({ updateFacultyList }) => {
         });
     };
 
-    // Function to show error toast
     return (
         <form className="create" onSubmit={handleSubmit}>
             <h3>Add a New Faculty Member</h3>
+            {successMessage && <p className="success-message">{successMessage}</p>}
             <input
                 type="text"
                 name="username"
